@@ -8,44 +8,111 @@
     android:orientation="vertical"
     tools:context="com.example.student.courtcounter.MainActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TEAM 1"
-        android:textSize="10pt"
-        android:textStyle="bold"
-        android:textColor="#FF0000"
-        android:gravity="center"
-        />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Score"
-        android:textSize="10pt"
-        android:textStyle="bold"
-        android:textColor="#000000"
-        android:gravity="center"
-        />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:textSize="10pt"
-        android:textStyle="bold"
-        android:textColor="#FFFFFF"
-        android:gravity="center"
-        />
-
-    <Button
-        android:id="@+id/buttonCounter"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="+1"
-        android:textSize="8pt"
-        android:background="#858585"
-        android:onClick="clickFunction1"
-        />
+        android:orientation="horizontal"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TEAM 1"
+                android:textSize="10pt"
+                android:textStyle="bold"
+                android:textColor="#FF0000"
+                android:gravity="center"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Score"
+                android:textSize="10pt"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:gravity="center"
+                />
+
+            <TextView
+                android:id="@+id/buttonCounter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="10pt"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:gravity="center"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+1"
+                android:textSize="20sp"
+                android:background="#858585"
+                android:onClick="clickFunction1"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TEAM 2"
+                android:textSize="10pt"
+                android:textStyle="bold"
+                android:textColor="#FF0000"
+                android:gravity="center"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Score"
+                android:textSize="10pt"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:gravity="center"
+                />
+
+            <TextView
+                android:id="@+id/buttonClicker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="10pt"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:gravity="center"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+1"
+                android:textSize="20sp"
+                android:background="#858585"
+                android:onClick="clickFunction2"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Game Over"
+        android:textSize="20sp"
+        android:background="#858585"
+        android:layout_margin="15dp"
+        android:onClick="gameOverFunction"
+        />
 </LinearLayout>
