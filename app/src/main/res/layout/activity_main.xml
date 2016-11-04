@@ -57,6 +57,16 @@
                 android:background="#858585"
                 android:onClick="clickFunction1"
                 />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="-1"
+                android:textSize="20sp"
+                android:background="#858585"
+                android:onClick="clickFunction3"
+                />
         </LinearLayout>
 
         <LinearLayout
@@ -102,6 +112,16 @@
                 android:textSize="20sp"
                 android:background="#858585"
                 android:onClick="clickFunction2"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="-1"
+                android:textSize="20sp"
+                android:background="#858585"
+                android:onClick="clickFunction4"
                 />
         </LinearLayout>
     </LinearLayout>
