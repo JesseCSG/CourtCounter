@@ -1,6 +1,7 @@
 package com.example.student.courtcounter;
 
 import android.content.DialogInterface;
+import android.media.MediaPlayer;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,7 +14,9 @@ public class MainActivity extends AppCompatActivity {
     private TextView countViewTwo;
     public int scoreOne;
     public int scoreTwo;
+    public String viewWinner;
     AlertDialog gameOverAlert;
+    MediaPlayer mediaPlayer;
 
 
     @Override
@@ -34,25 +37,40 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clickFunction1(View view){
-        countView.setText(String.valueOf(scoreOne));
         scoreOne++;
+        countView.setText(String.valueOf(scoreOne));
     }
 
     public void clickFunction2(View view){
-        countViewTwo.setText(String.valueOf(scoreTwo));
         scoreTwo++;
+        countViewTwo.setText(String.valueOf(scoreTwo));
+    }
+
+    public void clickFunction3(View view){
+        scoreOne--;
+        countView.setText(String.valueOf(scoreOne));
+    }
+
+    public void clickFunction4(View view){
+        scoreTwo--;
+        countViewTwo.setText(String.valueOf(scoreTwo));
     }
 
     public void gameOverFunction(View view) {
+
         if (scoreOne > scoreTwo) {
-            gameOverAlert.setMessage("Team 1 wins");
-        }
-        if (scoreTwo > scoreOne) {
-            gameOverAlert.setMessage("Team 2 wins");
+            viewWinner = "TEAM 1 WINS!";
+        }else if (scoreOne < scoreTwo) {
+            viewWinner = "TEAM 2 WINS!";
+        } else {
+            viewWinner = "IT'S A DRAW!";
         }
 
         gameOverAlert.setTitle("GAME OVER!!");
-        gameOverAlert.setMessage("Message Text");
+        gameOverAlert.setMessage(viewWinner);
+
+        mediaPlayer = MediaPlayer.create(this, R.raw.damn_son);
+        mediaPlayer.start();
 
         gameOverAlert.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
                 new DialogInterface.OnClickListener() {
@@ -60,10 +78,12 @@ public class MainActivity extends AppCompatActivity {
                         dialog.dismiss();
                     }
                 });
+
         gameOverAlert.show();
 
         scoreOne = 0;
         countView.setText(String.valueOf(scoreOne));
+
         scoreTwo = 0;
         countViewTwo.setText(String.valueOf(scoreTwo));
 
